@@ -13,11 +13,7 @@ class MealsScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(categoryTitle!),
       ),
-      body: Center(
-        child: Text(
-          'The Recepe For The Category'
-        ),
-      ),
+
     );
   }
 }
