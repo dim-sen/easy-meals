@@ -1,3 +1,4 @@
+import 'package:easy_meals/screens/meals_screen.dart';
 import 'package:flutter/material.dart';
 import '../screens/categories_screen.dart';
 
@@ -17,7 +18,11 @@ class MyApp extends StatelessWidget {
         canvasColor: Color.fromRGBO(255, 254, 229, 1),
         fontFamily: 'Raleway',
       ),
-      home: CategoriesScreen(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => CategoriesScreen(),
+        MealsScreen.routeName: (context) => MealsScreen(),
+      },
     );
   }
 }
