@@ -5,6 +5,11 @@ class DetailMealsScreen extends StatelessWidget {
 
   static const routeName = '/detail-meal';
 
+  final Function toggleFavorite;
+  final Function isFavorite;
+
+  DetailMealsScreen(this.toggleFavorite, this.isFavorite);
+
   Widget buildSelectionTitle(BuildContext context, String text) {
     return Container(
       margin: EdgeInsets.symmetric(
@@ -92,6 +97,12 @@ class DetailMealsScreen extends StatelessWidget {
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(
+          isFavorite(mealId) ? Icons.star : Icons.star_border,
+        ),
+        onPressed: () => toggleFavorite(mealId),
       ),
     );
   }
